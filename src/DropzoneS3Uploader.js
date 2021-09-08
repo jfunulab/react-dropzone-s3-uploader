@@ -66,6 +66,7 @@ export default class DropzoneS3Uploader extends React.Component {
   }
 
   constructor(props) {
+    console.log('constructing dropzone:', props)
     super()
     const uploadedFiles = []
     const {filename} = props
@@ -84,6 +85,7 @@ export default class DropzoneS3Uploader extends React.Component {
   componentWillReceiveProps = props => this.setUploaderOptions(props)
 
   setUploaderOptions = props => {
+    console.log('setting up uploader options', props.upload)
     this.setState({
       uploaderOptions: Object.assign({
         signingUrl: '/s3/sign',
@@ -154,7 +156,7 @@ export default class DropzoneS3Uploader extends React.Component {
       fileComponent,
       progressComponent,
       errorComponent,
-      ...dropzoneProps,
+      ...dropzoneProps
     } = this.props
 
     const ImageComponent = imageComponent || this.renderImage
