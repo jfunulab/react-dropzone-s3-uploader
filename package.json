@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/founderlab/react-dropzone-s3-uploader"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@jfunulab"
+  },
   "scripts": {
     "prepublish": "rm -rf ./lib && babel ./src --ignore '/node_modules/' --out-dir ./lib",
     "build": "rm -rf ./lib && babel ./src --ignore '/node_modules/' --out-dir ./lib",
