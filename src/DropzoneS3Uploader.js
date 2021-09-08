@@ -95,6 +95,7 @@ export default class DropzoneS3Uploader extends React.Component {
         onFinishS3Put: this.handleFinish,
         onProgress: this.handleProgress,
         onError: this.handleError,
+        inputRef: props.upload.inputRef(),
       }, props.upload),
     })
   }
@@ -128,6 +129,7 @@ export default class DropzoneS3Uploader extends React.Component {
       files,
       ...this.state.uploaderOptions,
     }
+    console.log('instantiating s3 uploader', options)
     new S3Upload(options) // eslint-disable-line
     this.props.onDrop && this.props.onDrop(files, rejectedFiles)
   }
