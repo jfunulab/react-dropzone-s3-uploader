@@ -95,7 +95,7 @@ export default class DropzoneS3Uploader extends React.Component {
         onFinishS3Put: this.handleFinish,
         onProgress: this.handleProgress,
         onError: this.handleError,
-        inputRef: props.upload.inputRef(),
+        inputRef: props.upload.inputRef(this.handleDrop),
       }, props.upload),
     })
   }
